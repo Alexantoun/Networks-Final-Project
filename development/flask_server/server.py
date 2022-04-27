@@ -1,8 +1,12 @@
 from flask import Flask
+import numpy as np
+import pandas as pd
 
 app = Flask(__name__)
 
+df = pd.read_csv('dummy.csv')
 print('Starting flask server')
+print(df.iloc[:,2]) #for all rows, the second column
 
 @app.route('/')
 def hello_world():
@@ -14,5 +18,15 @@ def hello_name(name):
     print('Sending Hello', name)
     return 'Hello {}!'.format(name)
 
+@app.route('/light')
+def sensSend():
+    print('Sending special message')
+    out = str(df.iloc[:,2].values)
+    print(out)
+    return out
+
+#@app.route('/')
 
 # print('Hello World')
+
+
