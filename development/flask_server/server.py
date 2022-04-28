@@ -21,9 +21,13 @@ def hello_name(name):
 @app.route('/light')
 def sensSend():
     print('Sending special message')
-    out = str(df.iloc[:,2].values)
+    out = (df.iloc[:,2].values)
     print(out)
     return out
+
+@app.route('/temp')
+def sensSend():
+    print
 
 #@app.route('/')
 
