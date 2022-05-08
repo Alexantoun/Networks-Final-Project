@@ -18,7 +18,7 @@ def main():
             while True:
                 data = conn.recv(1024)
                 recieved = data.decode()
-                print(f"{recieved}\n")  #if this fails then change recieved to data.decode
+                #print(f"{recieved}\n")  #if this fails then change recieved to data.decode
                 if recieved=="close\r\n":
                     break   #Go back to wait-for-connection state
                 arduinoList.append(recieved)
@@ -31,7 +31,7 @@ def main():
 
 header = ['Button', 'Temp-C', 'Humidity-%']
 file = open('Arduino Data.csv', 'w')
-with open('path/to/csv_file', 'w') as f:    
+with open('arduinoData', 'w') as f:    
     writer = csv.writer(f)
     writer.writerow(header)
     main()      
