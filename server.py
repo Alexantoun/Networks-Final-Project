@@ -17,6 +17,21 @@ def write_to_csv(l :list, writer):
         
         return
 
+    elif(l[-1]=='False' or l[-1]=='True'):
+        new_l = []
+        for x in l:
+            if(x=='False' or x=='True'):
+                new_l = [x] + new_l
+            else:
+                new_l = new_l + [x]
+
+        writer.writerow(l)
+        print(l)
+        l.clear()
+        
+        return
+        
+
 
 def main():
     host = "192.168.1.6" #input("Enter my IP: ")
