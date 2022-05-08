@@ -25,9 +25,9 @@ def sensSend():
     print(out)
     return out
 
-@app.route('/temp')
-def sensSend():
-    print
+# @app.route('/temp')
+# def sensSend():
+#     print
 
 #@app.route('/')
 
