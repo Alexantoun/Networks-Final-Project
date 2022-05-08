@@ -89,8 +89,8 @@ def main():
                 x+=1
                 if x==3:
                     arduinoList = parse_input(*arduinoList)
+                    x = 0
                     if(len(arduinoList) == 4):
-                        x = 0
                         writer.writerow(arduinoList)
                     print(arduinoList)
                     arduinoList.clear() 
