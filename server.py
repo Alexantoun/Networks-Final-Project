@@ -64,8 +64,8 @@ def main():
 
 
 header = ['Button', 'Temp-C', 'Humidity-%']
-file = open('Arduino Data.csv', 'w')
-with open('arduinoData', 'w') as f:    
+# file = open('Arduino Data.csv', 'w'a
+with open('arduinoData.csv', 'w') as f:    
     writer = csv.writer(f)
     writer.writerow(header)
     main()      
