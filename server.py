@@ -2,6 +2,22 @@ import socket   #low level networking interface for python
                 #supports bluetooth protocols tojo
 import csv
 
+
+
+def write_to_csv(l :list, writer):
+    if(len(l)!=3):
+        return
+    if(l[0]=='False' or l[0]=='True'):
+        if(l[-1]=='False' or l[-1]=='True'):
+            return
+
+        writer.writerow(l)
+        print(l)
+        l.clear()
+        
+        return
+
+
 def main():
     host = "192.168.1.6" #input("Enter my IP: ")
     port = 2345
@@ -25,9 +41,11 @@ def main():
                 x+=1
                 if x==3:
                     x = x%3
-                    writer.writerow(arduinoList)
-                    print(arduinoList)
-                    arduinoList.clear() 
+                    # writer.writerow(arduinoList)
+                    # print(arduinoList)
+                    # arduinoList.clear() 
+                    write_to_csv(arduinoList, writer)
+
 
 header = ['Button', 'Temp-C', 'Humidity-%']
 file = open('Arduino Data.csv', 'w')
