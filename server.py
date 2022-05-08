@@ -11,4 +11,3 @@ print('Starting flask server')
 def send():
     return df.to_html()
 
-asdflkj;jadfs

@@ -70,23 +70,28 @@ def main():
     port = 2345
     recieved = ""
     arduinoList = list()
+    t = 0
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: #like s = socket.socket... except automatically handles closing
         s.bind((host,port)) #Binding to this host and port
         while True:
+            if t > 10:
+                break
             s.listen()  #returns a positive integer for success, negative for an issue
             print("Waiting for connection...")
             conn, addr = s.accept() #waiting loop, waiting to accept a new connection
             print(f"Recieved connection om {addr}")
             x=0
             while True:
+                if t > 30:
+                    break
                 data = conn.recv(1024)
                 recieved = data.decode()
                 #print(f"{recieved}\n")  #if this fails then change recieved to data.decode
                 if recieved=="close\r\n":
                     break   #Go back to wait-for-connection state
                 arduinoList.append(recieved)
-                
-                x+=1
+                t += 1
+                x += 1
                 if x==3:
                     arduinoList = parse_input(*arduinoList)
                     x = 0
@@ -101,5 +106,8 @@ header = ['TimeStamp', 'Button', 'Temp-C', 'Humidity-%']
 with open('arduinoData.csv', 'a') as f:    
     writer = csv.writer(f)
     writer.writerow(header)
-    main()      
+    main()    
+    f.close()
+print("Done listening")
+
     
