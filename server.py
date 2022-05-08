@@ -1,7 +1,34 @@
-import socket   #low level networking interface for python
+import datetime, socket   #low level networking interface for python
                 #supports bluetooth protocols tojo
 import csv
 
+def parse_input(s1: str, s2: str, s3: str) -> list:
+    l = list()
+
+    l.append(datetime.datetime.now())
+
+    if(s1[0] == 'b'):
+        l.append(s1[1:])
+    if(s2[0] == 'b'):
+        l.append(s1[1:])
+    if(s3[0] == 'b'):
+        l.append(s1[1:])
+
+    if(s1[0] == 'c'):  
+        l.append(s1[1:])
+    if(s2[0] == 'c'):
+        l.append(s1[1:])
+    if(s3[0] == 'c'):
+        l.append(s1[1:])
+
+    if(s1[0] == 'h'):
+        l.append(s1[1:])
+    if(s2[0] == 'h'):
+        l.append(s1[1:])
+    if(s3[0] == 'h'):
+        l.append(s1[1:])
+    
+    return l
 
 
 def write_to_csv(l :list, writer):
@@ -28,7 +55,7 @@ def write_to_csv(l :list, writer):
 
         writer.writerow(l)
         print(l)
-        l.clear()
+        l = []
         
         return
         
@@ -63,7 +90,7 @@ def main():
                     write_to_csv(arduinoList, writer)
 
 
-header = ['Button', 'Temp-C', 'Humidity-%']
+header = ['TimeStamp', 'Button', 'Temp-C', 'Humidity-%']
 # file = open('Arduino Data.csv', 'w'a
 with open('arduinoData.csv', 'w') as f:    
     writer = csv.writer(f)
