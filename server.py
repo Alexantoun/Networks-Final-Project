@@ -5,6 +5,7 @@ import csv
 
 
 def write_to_csv(l :list, writer):
+    print(f'current list: {l}')
     if(len(l)!=3):
         return
     if(l[0]=='False' or l[0]=='True'):
