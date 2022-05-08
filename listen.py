@@ -89,13 +89,13 @@ def main():
                 x+=1
                 if x==3:
                     arduinoList = parse_input(*arduinoList)
+                    x = 0
                     if(len(arduinoList) == 4):
-                        x = 0
                         writer.writerow(arduinoList)
                     print(arduinoList)
                     arduinoList.clear() 
 
-
+print("Listener Running")
 header = ['TimeStamp', 'Button', 'Temp-C', 'Humidity-%']
 # file = open('Arduino Data.csv', 'w'a
 with open('arduinoData.csv', 'a') as f:    

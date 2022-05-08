@@ -51,24 +51,24 @@ void loop() {
     bttnState = digitalRead(D3);
     if(bttnState == LOW){
       digitalWrite(D4, HIGH);
-      client.print("Button being pressed");
+      client.print("bTrue");
     }
     else{
       digitalWrite(D4, LOW);
-      client.print("Button not being pressed");
-    }  
+      client.print("bFalse");
+    }
+    delay(100);  
     temp = dht.readTemperature();
     humid = dht.readHumidity();
-    msg = "Temperature read = " + String(temp);
+    msg = "c" + String(temp);
     Serial.println(msg);
     client.print(msg);
-    delay(50);
-    msg = "Humidity read = " + String(humid);
+    msg = "";
+    delay(100);
+    msg = "h" + String(humid);
     Serial.println(msg);
     client.print(msg);
-    //client.print
-    
-
+    //client.print   
     delay(2000);
   }
 
