@@ -95,7 +95,7 @@ def main():
                     print(arduinoList)
                     arduinoList.clear() 
 
-
+print("Listener Running")
 header = ['TimeStamp', 'Button', 'Temp-C', 'Humidity-%']
 # file = open('Arduino Data.csv', 'w'a
 with open('arduinoData.csv', 'a') as f:    
