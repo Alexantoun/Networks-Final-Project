@@ -5,9 +5,9 @@
 DHT dht(inRead, DHT11);
 
 //wifi stuff
-const char* ssid = "OceanFast_2GEXT";
-const char* psswrd = "IDontKnow1";
-const char* host ="192.168.1.6";
+const char* ssid = "";
+const char* psswrd = "";
+const char* host ="192.168.1.2";
 const uint16_t port = 2345;
 
 //Component stuff

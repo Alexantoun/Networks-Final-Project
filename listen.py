@@ -66,7 +66,7 @@ def parse_input(s1: str, s2: str, s3: str) -> list:
 
 
 def main():
-    host = "192.168.1.6" #input("Enter my IP: ")
+    host = "192.168.1.2" #input("Enter my IP: ")
     port = 2345
     recieved = ""
     arduinoList = list()
