@@ -7,7 +7,11 @@ DHT dht(inRead, DHT11);
 //wifi stuff
 const char* ssid = "";
 const char* psswrd = "";
+<<<<<<< HEAD
 const char* host ="192.168.1.2";
+=======
+const char* host ="192.168.1.6";
+>>>>>>> b94f650a2d35423649cb9ed40e2394a42dad45d4
 const uint16_t port = 2345;
 
 //Component stuff
